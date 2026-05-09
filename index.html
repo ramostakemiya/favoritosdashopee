@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meus Favoritos — Andrea Ramos</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#2A1A1F;--mid:#6B3A45;--light:#AA7880;
+  --red:#C83040;--red-l:#FAD0D5;--red-p:#FEF2F4;
+  --cream:#FDFAF6;--warm:#F5EDE6;--sage:#6A9A6E;--blue:#5070B0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;color:var(--ink);overflow-x:hidden;background:var(--cream)}
+
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 18px;
+  background:rgba(253,250,246,0.96);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(200,48,64,0.15);
+}
+.nav-brand{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--ink);line-height:1.2}
+.nav-brand small{display:block;font-size:10px;font-weight:400;color:var(--light);font-family:'Outfit',sans-serif}
+
+.hero{padding:84px 16px 20px;text-align:center;max-width:380px;margin:0 auto}
+.brand-tag{
+  display:inline-block;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--red);background:var(--red-l);padding:5px 16px;border-radius:50px;margin-bottom:14px;
+}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(26px,6vw,38px);font-weight:900;line-height:1.15;margin-bottom:10px}
+.hero h1 em{font-style:italic;color:var(--red)}
+.hero-sub{font-size:13px;color:var(--mid);line-height:1.7;font-weight:300}
+
+.aviso{max-width:360px;margin:16px auto 0;padding:0 16px}
+.aviso-inner{
+  background:linear-gradient(135deg,var(--red-p),#FFF9EC);
+  border:1px solid rgba(200,48,64,.18);border-radius:13px;padding:12px 15px;
+  display:flex;gap:10px;align-items:flex-start;
+}
+.aviso-text{font-size:12px;color:var(--mid);line-height:1.55;font-weight:300}
+.aviso-text strong{color:var(--ink);font-weight:600}
+
+.divider{
+  max-width:360px;margin:22px auto 12px;padding:0 16px;
+  display:flex;align-items:center;gap:10px;
+}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,48,64,.22),transparent)}
+.divider-text{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--light);white-space:nowrap}
+
+.produtos{max-width:380px;margin:0 auto;padding:0 16px}
+.prod-grid{display:flex;flex-direction:column;gap:10px}
+
+.prod-card{
+  background:#fff;border:1px solid rgba(200,48,64,.12);
+  border-radius:16px;overflow:hidden;padding:14px;
+  box-shadow:0 2px 10px rgba(42,26,31,.05);
+  display:flex;flex-direction:column;gap:8px;
+  transition:transform .22s,box-shadow .22s;
+}
+.prod-card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(200,48,64,.1)}
+
+.prod-tag{display:inline-block;font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:2px 9px;border-radius:20px;width:fit-content}
+.tag-i{color:var(--blue);background:rgba(80,112,176,.1)}
+.tag-e{color:#7A5AAA;background:rgba(122,90,170,.1)}
+.tag-a{color:var(--sage);background:rgba(106,154,110,.1)}
+.tag-n{color:var(--red);background:var(--red-l)}
+
+.prod-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--ink);line-height:1.2}
+.prod-desc{font-size:12px;color:var(--mid);line-height:1.55;font-weight:300}
+.btn-shopee{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  background:linear-gradient(135deg,var(--red),#A02030);
+  color:#fff;padding:11px;border-radius:10px;
+  font-size:12px;font-weight:600;text-decoration:none;
+  box-shadow:0 4px 12px rgba(200,48,64,.28);transition:all .22s;
+  margin-top:4px;
+}
+.btn-shopee:hover{transform:translateY(-1px);box-shadow:0 7px 18px rgba(200,48,64,.38)}
+
+footer{background:var(--ink);padding:28px 20px;text-align:center;margin-top:40px}
+footer p{color:rgba(255,255,255,.35);font-size:12px;line-height:1.8}
+footer strong{color:rgba(255,255,255,.65)}
+footer a{color:rgba(255,255,255,.5);text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand">
+    Andrea Ramos
+    <small>@andrearamos.art</small>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="brand-tag">\U0001f6cd\ufe0f Links favoritos</div>
+  <h1>Produtos que<br><em>uso e amo</em></h1>
+  <p class="hero-sub">Produtos testados e aprovados!</p>
+</header>
+
+<div class="aviso">
+  <div class="aviso-inner">
+    <span style="font-size:17px;flex-shrink:0">&#128161;</span>
+    <p class="aviso-text">Esses s&#227;o os materiais que <strong>realmente uso</strong> nos meus projetos. Os links levam direto para a Shopee.</p>
+  </div>
+</div>
+
+<!-- IMPRESSAO -->
+<div class="divider"><span class="divider-text">impress&#227;o</span></div>
+<div class="produtos"><div class="prod-grid">
+
+  <div class="prod-card">
+    <span class="prod-tag tag-i">&#128196; Impress&#227;o</span>
+    <p class="prod-name">Papel Fotogr&#225;fico 180g</p>
+        <a href="https://s.shopee.com.br/9ALJrmfoKD" class="btn-shopee" target="_blank" rel="noopener">&#128717;&#65039; Ver na Shopee</a>
+  </div>
+
+  <div class="prod-card">
+    <span class="prod-tag tag-i">&#128196; Impress&#227;o</span>
+    <p class="prod-name">Papel Offset 180g</p>
+        <a href="https://s.shopee.com.br/5VS1V6Rgd0" class="btn-shopee" target="_blank" rel="noopener">&#128717;&#65039; Ver na Shopee</a>
+  </div>
+
+</div></div>
+
+<!-- EQUIPAMENTOS -->
+<div class="divider"><span class="divider-text">equipamentos</span></div>
+<div class="produtos"><div class="prod-grid">
+
+  <div class="prod-card">
+    <span class="prod-tag tag-e">&#9881;&#65039; Equipamento</span>
+    <p class="prod-name">Laminadora</p>
+        <a href="https://s.shopee.com.br/3LNWvKq8Gs" class="btn-shopee" target="_blank" rel="noopener">&#128717;&#65039; Ver na Shopee</a>
+  </div>
+
+</div></div>
+
+<!-- ACABAMENTO -->
+<div class="divider"><span class="divider-text">acabamento</span></div>
+<div class="produtos"><div class="prod-grid">
+
+  <div class="prod-card">
+    <span class="prod-tag tag-a">&#9986;&#65039; Acabamento</span>
+    <p class="prod-name">Polaseal</p>
+       <a href="https://s.shopee.com.br/BQV9AXgxy" class="btn-shopee" target="_blank" rel="noopener">&#128717;&#65039; Ver na Shopee</a>
+  </div>
+
+  <div class="prod-card">
+    <span class="prod-tag tag-a">&#9986;&#65039; Acabamento</span>
+    <p class="prod-name">Furador</p>
+        <a href="https://s.shopee.com.br/60OI64BRPB" class="btn-shopee" target="_blank" rel="noopener">&#128717;&#65039; Ver na Shopee</a>
+  </div>
+
+  <div class="prod-card">
+    <span class="prod-tag tag-a">&#9986;&#65039; Acabamento</span>
+    <p class="prod-name">Arredondador de Bordas</p>
+        <a href="https://s.shopee.com.br/5L8bJ3cHvE" class="btn-shopee" target="_blank" rel="noopener">&#128717;&#65039; Ver na Shopee</a>
+  </div>
+
+  <div class="prod-card">
+    <span class="prod-tag tag-a">&#9986;&#65039; Acabamento</span>
+    <p class="prod-name">Base de Corte</p>
+        <a href="https://s.shopee.com.br/60OI6NCUqW" class="btn-shopee" target="_blank" rel="noopener">&#128717;&#65039; Ver na Shopee</a>
+  </div>
+
+</div></div>
+
+<!-- ENCADERNACAO -->
+<div class="divider"><span class="divider-text">encaderna&#231;&#227;o</span></div>
+<div class="produtos"><div class="prod-grid">
+
+  <div class="prod-card">
+    <span class="prod-tag tag-n">&#128206; Encaderna&#231;&#227;o</span>
+    <p class="prod-name">Argolas de Pl&#225;stico</p>
+        <a href="https://s.shopee.com.br/40dDijNhdE" class="btn-shopee" target="_blank" rel="noopener">&#128717;&#65039; Ver na Shopee</a>
+  </div>
+
+</div></div>
+
+<footer>
+  <p>
+    <strong>Andrea Ramos</strong><br>
+    <a href="https://instagram.com/andrearamos.art" target="_blank">@andrearamos.art</a><br>
+    Papelaria digital criativa &#127827;&#127826;&#129744;
+  </p>
+</footer>
+
+</body>
+</html>
